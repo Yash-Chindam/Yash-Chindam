@@ -172,6 +172,40 @@ me.say_hi()
 
 </td>
 </tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🏦 [AI-Powered Bank Statement & Credit Report Analyzer](https://github.com/Yash-Chindam/AI-Powered-Bank-Statement-Credit-Report-Analyzer)
+> **Finlyzer** — Intelligent financial document analysis platform using **Google Gemini AI** to extract, categorize, and summarize transactions from bank statements and credit reports.
+
+**Pipeline:** 9-step automated analysis · Parallel multi-key processing  
+**Stack:** `Gemini Pro` `FastAPI` `Streamlit` `GCS` `Docker`
+
+</td>
+<td width="50%" valign="top">
+
+### 🗣️ [AI-Powered Natural Language to SQL Engine](https://github.com/Yash-Chindam/AI-Powered-Natural-Language-to-SQL-Engine)
+> **NaturalSQL** — Ask questions in plain English, get executable PostgreSQL queries instantly — powered by Defog's **SQLCoder-7b-2** LLM.
+
+**Stack:** `SQLCoder-7b-2` `PyTorch` `Cloud SQL` `Transformers` `pandas`
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🔍 [Intelligent Claims Document Processing](https://github.com/Yash-Chindam/Intelligent-Claims-Document-Processing)
+> **ClaimLens AI** — Agentic document-processing pipeline for US commercial property insurance that extracts structured data, generates summaries, and writes comprehensive claim notes.
+
+**Supported:** 8+ document types · FNOL · Proof of Loss · Damage Photos  
+**Stack:** `LangGraph` `Azure OpenAI` `GPT-4` `Pydantic` `Datalab`
+
+</td>
+<td width="50%" valign="top">
+</td>
+</tr>
 </table>
 
 <details>
