@@ -41,6 +41,31 @@ me.say_hi()
 
 ---
 
+## 🌍 Open Source
+
+<div align="center">
+
+[![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-Contributor-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/commits/main?author=Yash-Chindam)
+
+</div>
+
+### [github/spec-kit](https://github.com/github/spec-kit) — GitHub's Spec-Driven Development toolkit
+
+**Core contribution** · [`PR #4250`](https://github.com/github/spec-kit/pull/4250) merged into `main`
+
+> Presets could not declare that they depend on an extension, so installing one without its companion left users with a workflow that silently did nothing. I added `requires.extensions` to the preset manifest with strict PEP 440 validation, plus an install-time check that warns — and names the exact remediation — for missing, stale, disabled, corrupted, and version-mismatched dependencies.
+
+**Community catalog** · published and listed in `github/spec-kit`
+
+| Package | What it does |
+|---|---|
+| [`speckit-inventory`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment) | Read-only extension that derives every live `FR-`/`NFR-`/`SC-`/`T-` ID from existing specs and returns focused per-task context packs instead of whole-file dumps |
+| [`inventory-alignment`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment) | Preset that makes the agent classify each requirement against the live set before writing, so a reworded requirement is updated rather than duplicated |
+
+`Python` · `CLI tooling` · `agent workflows` · zero runtime dependencies
+
+---
+
 ## 🛠️ Tech Stack
 
 <div align="center">
