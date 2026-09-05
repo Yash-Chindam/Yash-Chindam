@@ -9,7 +9,7 @@
 <br/>
 
 <!-- Social Badges -->
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yash-chindam)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/yashchindam/)
 [![Hugging Face](https://img.shields.io/badge/🤗%20HuggingFace-FFD43B?style=for-the-badge&logoColor=black)](https://huggingface.co/yashchindam)
 [![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Yash-Chindam)
 [![Email](https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:yashchindam@gmail.com)
@@ -45,7 +45,7 @@ me.say_hi()
 
 <div align="center">
 
-[![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-Contributor-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/commits/main?author=Yash-Chindam)
+[![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-4%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
 
 </div>
 
@@ -55,12 +55,20 @@ me.say_hi()
 
 > Presets could not declare that they depend on an extension, so installing one without its companion left users with a workflow that silently did nothing. I added `requires.extensions` to the preset manifest with strict PEP 440 validation, plus an install-time check that warns — and names the exact remediation — for missing, stale, disabled, corrupted, and version-mismatched dependencies.
 
+**Merged fixes** · 3 additional PRs into `main`
+
+| PR | What it fixed |
+|---|---|
+| [`#4424`](https://github.com/github/spec-kit/pull/4424) | The workflows reference guide had drifted from the shipped workflow on four points — version, minimum Spec Kit version, supported integrations, and the default integration. The guide told readers the default was `copilot` when it was actually `auto`. Reconciled the documented definition with the real one and added a test that fails if they diverge again. |
+| [`#4397`](https://github.com/github/spec-kit/pull/4397) | `setup-plan` emitted a JSON key named `SPECS_DIR` that held the per-feature directory, while every sibling script used `SPECS_DIR` for the specs root — the same name meaning two different paths. Renamed it to `FEATURE_DIR` across the Bash, PowerShell, and Python ports with a parity test. |
+| [`#4396`](https://github.com/github/spec-kit/pull/4396) | Template composition in `common.sh` looped forever when the resolved core content contained a literal `{CORE_TEMPLATE}`, because the loop re-tested the string it had just rewritten. Matched the already-correct PowerShell and Python semantics instead of inventing new ones. |
+
 **Community catalog** · published and listed in `github/spec-kit`
 
 | Package | What it does |
 |---|---|
-| [`speckit-inventory`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment) | Read-only extension that derives every live `FR-`/`NFR-`/`SC-`/`T-` ID from existing specs and returns focused per-task context packs instead of whole-file dumps |
-| [`inventory-alignment`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment) | Preset that makes the agent classify each requirement against the live set before writing, so a reworded requirement is updated rather than duplicated |
+| [`speckit-inventory`](https://github.com/github/spec-kit/issues/4226) | Read-only extension that derives every live `FR-`/`NFR-`/`SC-`/`T-` ID from existing specs and returns focused per-task context packs instead of whole-file dumps |
+| [`inventory-alignment`](https://github.com/github/spec-kit/issues/4227) | Preset that makes the agent classify each requirement against the live set before writing, so a reworded requirement is updated rather than duplicated |
 
 `Python` · `CLI tooling` · `agent workflows` · zero runtime dependencies
 
