@@ -45,9 +45,34 @@ me.say_hi()
 
 <div align="center">
 
+[![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-PR%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam)
 [![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-4%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
+[![Superpowers](https://img.shields.io/badge/obra%2Fsuperpowers-2%20PRs%20open-00D4B1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/obra/superpowers/pulls?q=is%3Apr+author%3AYash-Chindam)
+
+**6 upstream projects** · **5 PRs merged** · **7 PRs in review** · **2 packages published to a public catalog**
 
 </div>
+
+### [mlflow/mlflow](https://github.com/mlflow/mlflow) — the open-source AI engineering platform (~22k ★)
+
+**Merged** · [`PR #25556`](https://github.com/mlflow/mlflow/pull/25556) merged into `master`
+
+> LLM-as-a-judge scoring was unusable on Vertex AI's Claude models: every call failed with `anthropic_version: Field required`. The gateway's `adapter_class` path bypassed the provider's own `_prepare_payload()`, so the Vertex-specific request fields were never applied. I diagnosed it, filed [`#25543`](https://github.com/mlflow/mlflow/issues/25543), and fixed it at the adapter layer with a regression test covering the judge path.
+
+**In review** · a 4-PR series implementing [`FR #25585`](https://github.com/mlflow/mlflow/issues/25585) — ~3,400 lines across 95 files
+
+| PR | Scope |
+|---|---|
+| [`#25741`](https://github.com/mlflow/mlflow/pull/25741) | Run artifact requests in the UI use the stored artifact-proxy URI |
+| [`#25742`](https://github.com/mlflow/mlflow/pull/25742) | Logged-model artifact requests |
+| [`#25743`](https://github.com/mlflow/mlflow/pull/25743) | Model-version artifact requests |
+| [`#25748`](https://github.com/mlflow/mlflow/pull/25748) | Trace attachment requests |
+
+Also reported [`#25571`](https://github.com/mlflow/mlflow/issues/25571) — the Bedrock Titan and AI21 completions adapters silently drop `top_p` and `top_k`.
+
+`Python` · `TypeScript` · `React` · `MLOps` · `LLM gateways`
+
+---
 
 ### [github/spec-kit](https://github.com/github/spec-kit) — GitHub's Spec-Driven Development toolkit
 
@@ -63,14 +88,29 @@ me.say_hi()
 | [`#4397`](https://github.com/github/spec-kit/pull/4397) | `setup-plan` emitted a JSON key named `SPECS_DIR` that held the per-feature directory, while every sibling script used `SPECS_DIR` for the specs root — the same name meaning two different paths. Renamed it to `FEATURE_DIR` across the Bash, PowerShell, and Python ports with a parity test. |
 | [`#4396`](https://github.com/github/spec-kit/pull/4396) | Template composition in `common.sh` looped forever when the resolved core content contained a literal `{CORE_TEMPLATE}`, because the loop re-tested the string it had just rewritten. Matched the already-correct PowerShell and Python semantics instead of inventing new ones. |
 
-**Community catalog** · published and listed in `github/spec-kit`
+**Community catalog** · published, listed, and maintained at **v0.1.1**
 
 | Package | What it does |
 |---|---|
 | [`speckit-inventory`](https://github.com/github/spec-kit/issues/4226) | Read-only extension that derives every live `FR-`/`NFR-`/`SC-`/`T-` ID from existing specs and returns focused per-task context packs instead of whole-file dumps |
 | [`inventory-alignment`](https://github.com/github/spec-kit/issues/4227) | Preset that makes the agent classify each requirement against the live set before writing, so a reworded requirement is updated rather than duplicated |
 
+Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-kit/issues/4486) when I found the published entries pointed at a `download_url` that 404s — source at [`spec-kit-inventory-alignment`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment).
+
+**In review** · [`PR #4488`](https://github.com/github/spec-kit/pull/4488) — a bundled `github` extension for `taskstoissues`, implementing someone else's feature request ([`#4421`](https://github.com/github/spec-kit/issues/4421)). 1,541 lines across 13 files.
+
 `Python` · `CLI tooling` · `agent workflows` · zero runtime dependencies
+
+---
+
+### Also contributed to
+
+| Project | Contribution |
+|---|---|
+| [obra/superpowers](https://github.com/obra/superpowers) | [`#2263`](https://github.com/obra/superpowers/pull/2263) — brainstorming keeps the open question open when the user asks for context, instead of treating the request as an answer · [`#2259`](https://github.com/obra/superpowers/pull/2259) — re-resolve and verify relative links when skill content moves |
+| [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | Reported [`#8673`](https://github.com/langchain-ai/langgraph/issues/8673) — checkpoint serialization rejects any int outside the 64-bit range, though `Decimal` of the same value round-trips fine |
+| [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | [`#7042`](https://github.com/crewAIInc/crewAI/pull/7042) — tools returning coroutines inside an already-running event loop |
+| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | [`#89498`](https://github.com/NousResearch/hermes-agent/pull/89498) — the curator dropped configured fallback chains instead of forwarding them |
 
 ---
 
