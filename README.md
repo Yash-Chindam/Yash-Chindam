@@ -167,10 +167,52 @@ Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-
 <tr>
 <td width="50%" valign="top">
 
-### 🧬 [Drug-Protein Interaction Prediction](https://github.com/Yash-Chindam/Drug-Protein-Interaction-Prediction-Using-CLIP-and-Deep-Learning)
-> Predicts drug-protein binding strength (*Ki* values) using **OpenAI's CLIP** vision encoders on 2D molecular images & protein sequence logos.
+### 🛡️ [Secure MCP Multi-Agent Research Platform](https://github.com/Yash-Chindam/secure-mcp-multi-agent-research-platform)
+> A governed research system where five FastMCP servers are driven through a single gateway that **authorizes, meters, circuit-breaks and audits every tool call**. Workflow state transitions reject invalid stage skipping, claims require supporting evidence, and reviewer approvals bind to one exact server, capability, resource and argument digest.
 
-**Results:** RMSE `0.6041` · MSE `0.3649`  
+**Security model:** Rego policy-as-code that fails closed · Keycloak OIDC with an asymmetric algorithm allowlist · capability registry whose discovery reveals only what the caller may see · tenant-isolated jobs and evidence
+**Stack:** `Python 3.12` `FastMCP` `FastAPI` `OPA/Rego` `Keycloak` `PostgreSQL` `Docker`
+
+</td>
+<td width="50%" valign="top">
+
+### 🔀 [Production Local-LLM Inference & Routing Platform](https://github.com/Yash-Chindam/Production-Local-LLM-Inference-Routing-Platform)
+> An **OpenAI-compatible control plane** that routes each request across local model tiers on inferred task, privacy class and policy score. Every response records the selected model, its immutable revision, the candidate count and the reason it was chosen — so a routing decision is auditable after the fact.
+
+**Engineering:** three separately reported CI layers (unit/static, integration, Playwright) gate the release image · CD publishes a versioned OCI artifact · production startup refuses the dev key
+**Stack:** `Python` `FastAPI` `Ray Serve` `vLLM` `TypeScript` `Playwright` `Docker`
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🔍 [Self-Optimizing Production RAG Platform](https://github.com/Yash-Chindam/self-optimizing-production-rag-platform)
+> RAG that **cites or abstains** — never guesses. The query path is an explicit state machine (classify → clarify → rewrite → decompose → retrieve → generate → verify → repair), so an ambiguous question gets clarified and an unverified answer is narrowed to its best-supported sentence before falling back.
+
+**Self-optimizing:** an evaluator scores retrieval recall, grounding and forbidden claims *deterministically* rather than by LLM judgment, then a control loop perturbs one pipeline field at a time within reviewer-approved bounds and keeps only Pareto-optimal candidates that never regress authorization, latency or quality
+**Stack:** `Python` `LangGraph` `DSPy` `Qdrant` `OpenSearch` `Neo4j` `Presidio`
+
+</td>
+<td width="50%" valign="top">
+
+### 🔒 [LLM Security & Agent Guardrail Gateway](https://github.com/Yash-Chindam/llm-security-agent-guardrail-gateway)
+> A policy-aware gateway that inspects untrusted prompts, retrieved context, model output and proposed tool actions **before they cross a security boundary**. Risky actions return an approval token bound to the exact action digest, tenant, expiry, and one-time use.
+
+**Adversarial evaluation:** a PyRIT-style red-team suite covering direct and indirect injection, multi-turn jailbreak, encoded instructions, cross-tenant access, tool privilege escalation and MCP tool poisoning — scored against a committed baseline so a regression **fails CI** instead of landing silently
+**Stack:** `Python` `FastAPI` `PyRIT` `Bandit` `Trivy` `Playwright` `Docker`
+
+</td>
+</tr>
+
+<tr>
+<td width="50%" valign="top">
+
+### 🧬 [Drug-Protein Interaction Prediction](https://github.com/Yash-Chindam/Drug-Protein-Interaction-Prediction-Using-CLIP-and-Deep-Learning)
+> Predicts drug-protein binding strength (*Ki* values) using **OpenAI's CLIP** vision encoders on 2D molecular images and protein sequence logos.
+
+**Results:** RMSE `0.6041` · MSE `0.3649`
 **Stack:** `PyTorch` `CLIP` `RDKit` `Transformers` `CUDA`
 
 [![HuggingFace](https://img.shields.io/badge/🤗%20Model-FFD43B?style=flat-square)](https://huggingface.co/yashchindam/Drug-Protein-Interaction-Prediction-Using-CLIP-and-Deep-Learning)
@@ -179,104 +221,12 @@ Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-
 </td>
 <td width="50%" valign="top">
 
-### 🗣️ [AI Voice Onboarding System](https://github.com/Yash-Chindam/AI--Voice-Onboarding-System)
-> Modular, scalable AI onboarding framework with multi-LLM support, vector stores, and guided setup workflows.
+### 🏦 [Finlyzer — Bank Statement & Credit Report Analyzer](https://github.com/Yash-Chindam/AI-Powered-Bank-Statement-Credit-Report-Analyzer)
+> Financial document analysis that uses **Google Gemini** vision to extract, categorize and summarize transactions from bank statements and credit reports, then surfaces recurring patterns, credit score, open loans and overdue status.
 
-**Stack:** `LangChain` `LlamaIndex` `FastAPI` `FAISS` `Pydantic`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 📄 [Multi-PDF Chatbot with RAG & FAISS](https://github.com/Yash-Chindam/Multi_Pdf_chatbot_using_RAG_and_Faiss_with_Mistral_Nemo)
-> Chat with multiple PDFs using **Retrieval Augmented Generation** powered by Mistral Nemo and FAISS vector search.
-
-**Stack:** `Mistral Nemo` `FAISS` `RAG` `LangChain`
-
-</td>
-<td width="50%" valign="top">
-
-### 📑 [RFP Document Info Extraction via LLMs](https://github.com/Yash-Chindam/RFP-Document-Information-Extraction-Using-LLMs)
-> Automatically extracts structured information from RFP documents using few-shot prompting and chain-of-thought reasoning.
-
-**Accuracy:** 85–92% · **Speed:** 30–60s/doc  
-**Stack:** `GPT-4` `LangChain` `Pydantic` `PyPDF2`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 👁️ [Vision-Based Entity Extraction](https://github.com/Yash-Chindam/Vision-Based-Entity-Extraction)
-> Extracts named entities from images using OCR + NER pipeline. Supports forms, invoices, ID cards, and business cards.
-
-**Accuracy:** Entity F1 80–92%  
-**Stack:** `EasyOCR` `spaCy` `YOLO` `OpenCV` `Tesseract`
-
-</td>
-<td width="50%" valign="top">
-
-### 🌿 [ECO2 — Environmental ML Platform](https://github.com/Yash-Chindam/ECO2)
-> Environmental sustainability platform for carbon footprint tracking, climate modeling, and biodiversity assessment.
-
-**Stack:** `GeoPandas` `Folium` `NetCDF4` `scikit-learn` `Plotly`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 📺 [YouTube Video Summarizer via Gemini Pro](https://github.com/Yash-Chindam/Youtube_Video_Transcribe_Summarizer_using_Gemini_pro)
-> Transcribes & summarizes YouTube videos using **Google Gemini Pro** with a clean Streamlit UI.
-
-**Stack:** `Gemini Pro` `Streamlit` `YouTube API`
-
-</td>
-<td width="50%" valign="top">
-
-### 🎙️ [Podcast Generator](https://github.com/Yash-Chindam/Podcast_generator)
-> AI-powered podcast script and audio generation pipeline using language models and TTS synthesis.
-
-**Stack:** `LLMs` `TTS` `Python`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 🏦 [AI-Powered Bank Statement & Credit Report Analyzer](https://github.com/Yash-Chindam/AI-Powered-Bank-Statement-Credit-Report-Analyzer)
-> **Finlyzer** — Intelligent financial document analysis platform using **Google Gemini AI** to extract, categorize, and summarize transactions from bank statements and credit reports.
-
-**Pipeline:** 9-step automated analysis · Parallel multi-key processing  
+**Throughput:** 9-step automated pipeline · parallel processing across up to 4 API keys via `ThreadPoolExecutor`
 **Stack:** `Gemini Pro` `FastAPI` `Streamlit` `GCS` `Docker`
 
-</td>
-<td width="50%" valign="top">
-
-### 🗣️ [AI-Powered Natural Language to SQL Engine](https://github.com/Yash-Chindam/AI-Powered-Natural-Language-to-SQL-Engine)
-> **NaturalSQL** — Ask questions in plain English, get executable PostgreSQL queries instantly — powered by Defog's **SQLCoder-7b-2** LLM.
-
-**Stack:** `SQLCoder-7b-2` `PyTorch` `Cloud SQL` `Transformers` `pandas`
-
-</td>
-</tr>
-
-<tr>
-<td width="50%" valign="top">
-
-### 🔍 [Intelligent Claims Document Processing](https://github.com/Yash-Chindam/Intelligent-Claims-Document-Processing)
-> **ClaimLens AI** — Agentic document-processing pipeline for US commercial property insurance that extracts structured data, generates summaries, and writes comprehensive claim notes.
-
-**Supported:** 8+ document types · FNOL · Proof of Loss · Damage Photos  
-**Stack:** `LangGraph` `Azure OpenAI` `GPT-4` `Pydantic` `Datalab`
-
-</td>
-<td width="50%" valign="top">
 </td>
 </tr>
 </table>
@@ -288,18 +238,23 @@ Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-
 
 | Project | Description | Stack |
 |---|---|---|
-| [RAG w/ LLaMA2 + LangChain + ChromaDB](https://github.com/Yash-Chindam/RAG-using-llama2-langchain-and-chromadb) | End-to-end RAG pipeline using LLaMA 2 | `LLaMA 2` `ChromaDB` `LangChain` |
+| [Intelligent Claims Document Processing](https://github.com/Yash-Chindam/Intelligent-Claims-Document-Processing) | **ClaimLens AI** — agentic pipeline for US commercial property insurance across 8+ document types | `LangGraph` `Azure OpenAI` `Pydantic` |
+| [AI-Powered Natural Language to SQL Engine](https://github.com/Yash-Chindam/AI-Powered-Natural-Language-to-SQL-Engine) | **NaturalSQL** — plain English to executable PostgreSQL via SQLCoder-7b-2 | `SQLCoder-7b-2` `PyTorch` `Cloud SQL` |
+| [AI Voice Onboarding System](https://github.com/Yash-Chindam/AI--Voice-Onboarding-System) | Modular AI onboarding framework with multi-LLM support and guided setup workflows | `LangChain` `LlamaIndex` `FastAPI` |
+| [RFP Document Info Extraction via LLMs](https://github.com/Yash-Chindam/RFP-Document-Information-Extraction-Using-LLMs) | Structured extraction from RFP documents, 85–92% accuracy at 30–60s/doc | `GPT-4` `LangChain` `PyPDF2` |
+| [Vision-Based Entity Extraction](https://github.com/Yash-Chindam/Vision-Based-Entity-Extraction) | OCR + NER over forms, invoices, ID cards and business cards — entity F1 80–92% | `EasyOCR` `spaCy` `YOLO` |
+| [Multi-PDF Chatbot with RAG & FAISS](https://github.com/Yash-Chindam/Multi_Pdf_chatbot_using_RAG_and_Faiss_with_Mistral_Nemo) | Chat across many PDFs at once with RAG over FAISS | `Mistral Nemo` `FAISS` `LangChain` |
+| [ECO2 — Environmental ML Platform](https://github.com/Yash-Chindam/ECO2) | Carbon footprint tracking, climate modeling and biodiversity assessment | `GeoPandas` `NetCDF4` `Plotly` |
+| [YouTube Video Summarizer](https://github.com/Yash-Chindam/Youtube_Video_Transcribe_Summarizer_using_Gemini_pro) | Transcribes and summarizes YouTube videos with a Streamlit UI | `Gemini Pro` `Streamlit` |
+| [RAG w/ LLaMA2 + LangChain + ChromaDB](https://github.com/Yash-Chindam/RAG-using-llama2-langchain-and-chromadb) | End-to-end RAG pipeline using LLaMA 2 | `LLaMA 2` `ChromaDB` |
 | [PDF Chatbot with RAG](https://github.com/Yash-Chindam/PDF-Chatbot-with-RAG) | Conversational PDF Q&A with RAG architecture | `RAG` `FAISS` `LLMs` |
-| [Conversational Q&A Chatbot — Mistral Nemo](https://github.com/Yash-Chindam/Conversational_and_Q-A_chatbot_using_Mistral_Nemo) | Contextual, multi-turn chatbot using Mistral Nemo | `Mistral Nemo` `LangChain` |
 | [Image Captioning](https://github.com/Yash-Chindam/Image-Captioning) | Deep learning-based automatic image captioning | `PyTorch` `CNN` `LSTM` |
-| [License Plate Recognition](https://github.com/Yash-Chindam/LICENSE-PLATE) | Automatic license plate detection and OCR | `OpenCV` `OCR` `Python` |
-| [Text Summarization — BART](https://github.com/Yash-Chindam/Text_Summarization_using_BART) | Abstractive text summarization with BART | `BART` `Transformers` `HuggingFace` |
-| [Anime Title Generator — Flan-T5](https://github.com/Yash-Chindam/Anime_title_generator_using_flant5_base) | Fine-tuned Flan-T5 for creative anime title generation | `Flan-T5` `HuggingFace` |
+| [License Plate Recognition](https://github.com/Yash-Chindam/LICENSE-PLATE) | Automatic license plate detection and OCR | `OpenCV` `OCR` |
+| [Text Summarization — BART](https://github.com/Yash-Chindam/Text_Summarization_using_BART) | Abstractive text summarization with BART | `BART` `Transformers` |
 | [Research Paper Title Generator — BART](https://github.com/Yash-Chindam/Research_paper_title_generator_using_bart_base) | Fine-tuned BART for academic title generation | `BART` `Transformers` |
 | [Movie Title Generator — Flan-T5](https://github.com/Yash-Chindam/Movie_title_generator_using_flanT5_base) | Flan-T5 fine-tuned for cinematic title generation | `Flan-T5` `HuggingFace` |
 | [Predicting Credit Card Approvals](https://github.com/Yash-Chindam/Predicting-Credit-Card-Approvals) | ML classifier for credit card approval prediction | `scikit-learn` `Pandas` |
-| [Google Play Store Trend Analysis](https://github.com/Yash-Chindam/Google-play-store-trend-analysis) | EDA and trend analysis of Play Store app data | `Pandas` `Matplotlib` `Seaborn` |
-| [RAG Implementation & Prompt Optimization](https://github.com/Yash-Chindam/RAG_Implementation_and_Prompt_Optimization) | Benchmarking and optimizing RAG prompt strategies | `RAG` `LLMs` `Python` |
+| [RAG Implementation & Prompt Optimization](https://github.com/Yash-Chindam/RAG_Implementation_and_Prompt_Optimization) | Benchmarking and optimizing RAG prompt strategies | `RAG` `LLMs` |
 
 </details>
 
