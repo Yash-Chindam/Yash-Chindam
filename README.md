@@ -45,18 +45,24 @@ me.say_hi()
 
 <div align="center">
 
-[![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-PR%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam)
+[![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-2%20PRs%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam)
 [![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-4%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
 
-**5 PRs merged into MLflow and GitHub's Spec Kit** · **2 packages published to a public catalog**
+**6 PRs merged into MLflow and GitHub's Spec Kit** · **2 packages published to a public catalog**
 
 </div>
 
 ### [mlflow/mlflow](https://github.com/mlflow/mlflow) — the open-source AI engineering platform (~22k ★)
 
-**Merged** · [`PR #25556`](https://github.com/mlflow/mlflow/pull/25556) merged into `master`
+**Merged** · 2 PRs into `master`
+
+**1.** [`PR #25556`](https://github.com/mlflow/mlflow/pull/25556)
 
 > LLM-as-a-judge scoring was unusable on Vertex AI's Claude models: every call failed with `anthropic_version: Field required`. The gateway's `adapter_class` path bypassed the provider's own `_prepare_payload()`, so the Vertex-specific request fields were never applied. I diagnosed it, filed [`#25543`](https://github.com/mlflow/mlflow/issues/25543), and fixed it at the adapter layer with a regression test covering the judge path.
+
+**2.** [`PR #25795`](https://github.com/mlflow/mlflow/pull/25795)
+
+> The Bedrock Titan and AI21 completions adapters silently dropped `top_p`: callers set it, the request went out without it, and nobody got an error. I reported it as [`#25571`](https://github.com/mlflow/mlflow/issues/25571) and fixed it by mapping `top_p` onto each adapter's native field name, with tests.
 
 `Python` · `MLOps` · `LLM gateways` · `Vertex AI`
 
