@@ -47,9 +47,8 @@ me.say_hi()
 
 [![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-PR%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam)
 [![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-4%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
-[![Superpowers](https://img.shields.io/badge/obra%2Fsuperpowers-2%20PRs%20open-00D4B1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/obra/superpowers/pulls?q=is%3Apr+author%3AYash-Chindam)
 
-**5 PRs merged into MLflow and GitHub's Spec Kit** · **8 PRs in review** · **2 packages published to a public catalog**
+**5 PRs merged into MLflow and GitHub's Spec Kit** · **2 packages published to a public catalog**
 
 </div>
 
@@ -59,18 +58,7 @@ me.say_hi()
 
 > LLM-as-a-judge scoring was unusable on Vertex AI's Claude models: every call failed with `anthropic_version: Field required`. The gateway's `adapter_class` path bypassed the provider's own `_prepare_payload()`, so the Vertex-specific request fields were never applied. I diagnosed it, filed [`#25543`](https://github.com/mlflow/mlflow/issues/25543), and fixed it at the adapter layer with a regression test covering the judge path.
 
-**In review** · a 4-PR series implementing [`FR #25585`](https://github.com/mlflow/mlflow/issues/25585) — ~3,400 lines across 95 files
-
-| PR | Scope |
-|---|---|
-| [`#25741`](https://github.com/mlflow/mlflow/pull/25741) | Run artifact requests in the UI use the stored artifact-proxy URI |
-| [`#25742`](https://github.com/mlflow/mlflow/pull/25742) | Logged-model artifact requests |
-| [`#25743`](https://github.com/mlflow/mlflow/pull/25743) | Model-version artifact requests |
-| [`#25748`](https://github.com/mlflow/mlflow/pull/25748) | Trace attachment requests |
-
-Also reported [`#25571`](https://github.com/mlflow/mlflow/issues/25571) — the Bedrock Titan and AI21 completions adapters silently drop `top_p` and `top_k` — and fixed it in [`PR #25795`](https://github.com/mlflow/mlflow/pull/25795), mapping `top_p` onto each adapter's native field name with tests.
-
-`Python` · `TypeScript` · `React` · `MLOps` · `LLM gateways`
+`Python` · `MLOps` · `LLM gateways` · `Vertex AI`
 
 ---
 
@@ -97,18 +85,7 @@ Also reported [`#25571`](https://github.com/mlflow/mlflow/issues/25571) — the 
 
 Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-kit/issues/4486) when I found the published entries pointed at a `download_url` that 404s — source at [`spec-kit-inventory-alignment`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment).
 
-**In review** · [`PR #4488`](https://github.com/github/spec-kit/pull/4488) — a bundled `github` extension for `taskstoissues`, implementing someone else's feature request ([`#4421`](https://github.com/github/spec-kit/issues/4421)). 1,541 lines across 13 files.
-
 `Python` · `CLI tooling` · `agent workflows` · zero runtime dependencies
-
----
-
-### Also contributed to
-
-| Project | Contribution |
-|---|---|
-| [obra/superpowers](https://github.com/obra/superpowers) | [`#2263`](https://github.com/obra/superpowers/pull/2263) — brainstorming keeps the open question open when the user asks for context, instead of treating the request as an answer · [`#2259`](https://github.com/obra/superpowers/pull/2259) — re-resolve and verify relative links when skill content moves |
-| [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | Reported [`#8673`](https://github.com/langchain-ai/langgraph/issues/8673) — checkpoint serialization rejects any int outside the 64-bit range, though `Decimal` of the same value round-trips fine |
 
 ---
 
