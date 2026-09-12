@@ -49,7 +49,7 @@ me.say_hi()
 [![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-4%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
 [![Superpowers](https://img.shields.io/badge/obra%2Fsuperpowers-2%20PRs%20open-00D4B1?style=for-the-badge&logo=github&logoColor=white)](https://github.com/obra/superpowers/pulls?q=is%3Apr+author%3AYash-Chindam)
 
-**6 upstream projects** · **5 PRs merged** · **7 PRs in review** · **2 packages published to a public catalog**
+**5 PRs merged into MLflow and GitHub's Spec Kit** · **8 PRs in review** · **2 packages published to a public catalog**
 
 </div>
 
@@ -68,7 +68,7 @@ me.say_hi()
 | [`#25743`](https://github.com/mlflow/mlflow/pull/25743) | Model-version artifact requests |
 | [`#25748`](https://github.com/mlflow/mlflow/pull/25748) | Trace attachment requests |
 
-Also reported [`#25571`](https://github.com/mlflow/mlflow/issues/25571) — the Bedrock Titan and AI21 completions adapters silently drop `top_p` and `top_k`.
+Also reported [`#25571`](https://github.com/mlflow/mlflow/issues/25571) — the Bedrock Titan and AI21 completions adapters silently drop `top_p` and `top_k` — and fixed it in [`PR #25795`](https://github.com/mlflow/mlflow/pull/25795), mapping `top_p` onto each adapter's native field name with tests.
 
 `Python` · `TypeScript` · `React` · `MLOps` · `LLM gateways`
 
@@ -109,8 +109,6 @@ Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-
 |---|---|
 | [obra/superpowers](https://github.com/obra/superpowers) | [`#2263`](https://github.com/obra/superpowers/pull/2263) — brainstorming keeps the open question open when the user asks for context, instead of treating the request as an answer · [`#2259`](https://github.com/obra/superpowers/pull/2259) — re-resolve and verify relative links when skill content moves |
 | [langchain-ai/langgraph](https://github.com/langchain-ai/langgraph) | Reported [`#8673`](https://github.com/langchain-ai/langgraph/issues/8673) — checkpoint serialization rejects any int outside the 64-bit range, though `Decimal` of the same value round-trips fine |
-| [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) | [`#7042`](https://github.com/crewAIInc/crewAI/pull/7042) — tools returning coroutines inside an already-running event loop |
-| [NousResearch/hermes-agent](https://github.com/NousResearch/hermes-agent) | [`#89498`](https://github.com/NousResearch/hermes-agent/pull/89498) — the curator dropped configured fallback chains instead of forwarding them |
 
 ---
 
