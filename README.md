@@ -46,9 +46,9 @@ me.say_hi()
 <div align="center">
 
 [![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-2%20PRs%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam)
-[![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-4%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
+[![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-5%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
 
-**6 PRs merged into MLflow and GitHub's Spec Kit** · **2 packages published to a public catalog**
+**7 PRs merged into MLflow and GitHub's Spec Kit** · **1 bundled extension shipped in Spec Kit** · **2 packages published to a public catalog**
 
 </div>
 
@@ -70,9 +70,15 @@ me.say_hi()
 
 ### [github/spec-kit](https://github.com/github/spec-kit) — GitHub's Spec-Driven Development toolkit
 
-**Core contribution** · [`PR #4250`](https://github.com/github/spec-kit/pull/4250) merged into `main`
+**Core contributions** · 2 feature PRs merged into `main`
+
+**1.** [`PR #4250`](https://github.com/github/spec-kit/pull/4250) — preset-to-extension dependencies
 
 > Presets could not declare that they depend on an extension, so installing one without its companion left users with a workflow that silently did nothing. I added `requires.extensions` to the preset manifest with strict PEP 440 validation, plus an install-time check that warns — and names the exact remediation — for missing, stale, disabled, corrupted, and version-mismatched dependencies.
+
+**2.** [`PR #4488`](https://github.com/github/spec-kit/pull/4488) — bundled `github` extension for `taskstoissues`
+
+> Spec Kit had no first-party way to turn a generated task list into GitHub issues. I built the bundled `github` extension implementing someone else's feature request ([`#4421`](https://github.com/github/spec-kit/issues/4421)): a task resolver ported across Bash, PowerShell and Python, wired into the official extension catalog. 2,455 lines across 13 files through 24 review rounds — 1,422 of them tests.
 
 **Merged fixes** · 3 additional PRs into `main`
 
