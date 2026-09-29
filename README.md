@@ -45,106 +45,29 @@ me.say_hi()
 
 <div align="center">
 
-[![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-2%20PRs%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam)
 [![Spec Kit](https://img.shields.io/badge/github%2Fspec--kit-5%20PRs%20merged-6C63FF?style=for-the-badge&logo=github&logoColor=white)](https://github.com/github/spec-kit/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
+[![MLflow](https://img.shields.io/badge/mlflow%2Fmlflow-2%20PRs%20merged-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)](https://github.com/mlflow/mlflow/pulls?q=is%3Apr+author%3AYash-Chindam+is%3Amerged)
 
-**7 PRs merged into MLflow and GitHub's Spec Kit** · **1 bundled extension shipped in Spec Kit** · **2 packages published to a public catalog**
+**7 PRs merged** · **1 bundled extension shipped inside Spec Kit** · **2 packages in its community catalog**
 
 </div>
-
-### [mlflow/mlflow](https://github.com/mlflow/mlflow) — the open-source AI engineering platform (~22k ★)
-
-**Merged** · 2 PRs into `master`
-
-**1.** [`PR #25556`](https://github.com/mlflow/mlflow/pull/25556)
-
-> LLM-as-a-judge scoring was unusable on Vertex AI's Claude models: every call failed with `anthropic_version: Field required`. The gateway's `adapter_class` path bypassed the provider's own `_prepare_payload()`, so the Vertex-specific request fields were never applied. I diagnosed it, filed [`#25543`](https://github.com/mlflow/mlflow/issues/25543), and fixed it at the adapter layer with a regression test covering the judge path.
-
-**2.** [`PR #25795`](https://github.com/mlflow/mlflow/pull/25795)
-
-> The Bedrock Titan and AI21 completions adapters silently dropped `top_p`: callers set it, the request went out without it, and nobody got an error. I reported it as [`#25571`](https://github.com/mlflow/mlflow/issues/25571) and fixed it by mapping `top_p` onto each adapter's native field name, with tests.
-
-`Python` · `MLOps` · `LLM gateways` · `Vertex AI`
-
----
 
 ### [github/spec-kit](https://github.com/github/spec-kit) — GitHub's Spec-Driven Development toolkit
 
-**Core contributions** · 2 feature PRs merged into `main`
-
-**1.** [`PR #4250`](https://github.com/github/spec-kit/pull/4250) — preset-to-extension dependencies
-
-> Presets could not declare that they depend on an extension, so installing one without its companion left users with a workflow that silently did nothing. I added `requires.extensions` to the preset manifest with strict PEP 440 validation, plus an install-time check that warns — and names the exact remediation — for missing, stale, disabled, corrupted, and version-mismatched dependencies.
-
-**2.** [`PR #4488`](https://github.com/github/spec-kit/pull/4488) — bundled `github` extension for `taskstoissues`
-
-> Spec Kit had no first-party way to turn a generated task list into GitHub issues. I built the bundled `github` extension implementing someone else's feature request ([`#4421`](https://github.com/github/spec-kit/issues/4421)): a task resolver ported across Bash, PowerShell and Python, wired into the official extension catalog. 2,455 lines across 13 files through 24 review rounds — 1,422 of them tests.
-
-**Merged fixes** · 3 additional PRs into `main`
-
-| PR | What it fixed |
+| Merged | What it was |
 |---|---|
-| [`#4424`](https://github.com/github/spec-kit/pull/4424) | The workflows reference guide had drifted from the shipped workflow on four points — version, minimum Spec Kit version, supported integrations, and the default integration. The guide told readers the default was `copilot` when it was actually `auto`. Reconciled the documented definition with the real one and added a test that fails if they diverge again. |
-| [`#4397`](https://github.com/github/spec-kit/pull/4397) | `setup-plan` emitted a JSON key named `SPECS_DIR` that held the per-feature directory, while every sibling script used `SPECS_DIR` for the specs root — the same name meaning two different paths. Renamed it to `FEATURE_DIR` across the Bash, PowerShell, and Python ports with a parity test. |
-| [`#4396`](https://github.com/github/spec-kit/pull/4396) | Template composition in `common.sh` looped forever when the resolved core content contained a literal `{CORE_TEMPLATE}`, because the loop re-tested the string it had just rewritten. Matched the already-correct PowerShell and Python semantics instead of inventing new ones. |
+| [`#4488`](https://github.com/github/spec-kit/pull/4488) | **Bundled `github` extension** for `taskstoissues` — ships inside Spec Kit's own catalog. Task resolver ported across Bash, PowerShell and Python. 2,455 lines / 13 files / 24 review rounds, 1,422 of them tests. Built another user's feature request ([`#4421`](https://github.com/github/spec-kit/issues/4421)). |
+| [`#4250`](https://github.com/github/spec-kit/pull/4250) | **Preset-to-extension dependencies.** Installing a preset without its companion silently did nothing. Added `requires.extensions` with PEP 440 validation and an install-time check naming the exact remediation for five failure states. |
+| [`#4424`](https://github.com/github/spec-kit/pull/4424) · [`#4397`](https://github.com/github/spec-kit/pull/4397) · [`#4396`](https://github.com/github/spec-kit/pull/4396) | Three fixes — reference docs that had drifted from the shipped workflow (plus a test that fails on future drift), one JSON key meaning two different paths across three language ports, and template composition looping forever on a literal token. |
 
-**Community catalog** · published, listed, and maintained at **v0.1.1**
+**Community catalog** · [`speckit-inventory`](https://github.com/github/spec-kit/issues/4226) (extension) and [`inventory-alignment`](https://github.com/github/spec-kit/issues/4227) (preset) — published and maintained at **v0.1.1**, source at [`spec-kit-inventory-alignment`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment).
 
-| Package | What it does |
+### [mlflow/mlflow](https://github.com/mlflow/mlflow) — the open-source AI engineering platform (~22k ★)
+
+| Merged | What it was |
 |---|---|
-| [`speckit-inventory`](https://github.com/github/spec-kit/issues/4226) | Read-only extension that derives every live `FR-`/`NFR-`/`SC-`/`T-` ID from existing specs and returns focused per-task context packs instead of whole-file dumps |
-| [`inventory-alignment`](https://github.com/github/spec-kit/issues/4227) | Preset that makes the agent classify each requirement against the live set before writing, so a reworded requirement is updated rather than duplicated |
-
-Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-kit/issues/4486) when I found the published entries pointed at a `download_url` that 404s — source at [`spec-kit-inventory-alignment`](https://github.com/Yash-Chindam/spec-kit-inventory-alignment).
-
-`Python` · `CLI tooling` · `agent workflows` · zero runtime dependencies
-
----
-
-## 🛠️ Tech Stack
-
-<div align="center">
-
-**Languages & Frameworks**
-
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Flask](https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white)
-
-**AI / ML**
-
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
-![Hugging Face](https://img.shields.io/badge/🤗%20Transformers-FFD43B?style=for-the-badge)
-![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
-![scikit-learn](https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
-![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=for-the-badge&logo=opencv&logoColor=white)
-
-**LLMs & Models**
-
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![Mistral](https://img.shields.io/badge/Mistral_AI-FF6B35?style=for-the-badge)
-![LLaMA](https://img.shields.io/badge/LLaMA_2-1877F2?style=for-the-badge&logo=meta&logoColor=white)
-![CLIP](https://img.shields.io/badge/CLIP-00B2FF?style=for-the-badge)
-![BART](https://img.shields.io/badge/BART-F26207?style=for-the-badge)
-![Gemini](https://img.shields.io/badge/Gemini_Pro-4285F4?style=for-the-badge&logo=google&logoColor=white)
-
-**Vector Databases & RAG**
-
-![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge)
-![ChromaDB](https://img.shields.io/badge/ChromaDB-F7931A?style=for-the-badge)
-![Pinecone](https://img.shields.io/badge/Pinecone-000000?style=for-the-badge)
-![BM25](https://img.shields.io/badge/BM25-6C63FF?style=for-the-badge)
-
-**Data & Tools**
-
-![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
-![NumPy](https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white)
-![Matplotlib](https://img.shields.io/badge/Matplotlib-11557C?style=for-the-badge)
-![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-
-</div>
+| [`#25556`](https://github.com/mlflow/mlflow/pull/25556) | LLM-as-a-judge scoring failed on **every** Vertex AI Claude model — the gateway's `adapter_class` path bypassed the provider's own `_prepare_payload()`, so Vertex request fields were never applied. Diagnosed it, filed [`#25543`](https://github.com/mlflow/mlflow/issues/25543), fixed it with a regression test. |
+| [`#25795`](https://github.com/mlflow/mlflow/pull/25795) | Bedrock Titan and AI21 adapters silently dropped `top_p` — set by the caller, never sent, no error raised. Reported as [`#25571`](https://github.com/mlflow/mlflow/issues/25571), then mapped it onto each adapter's native field name. 22 lines of fix, 104 of test. |
 
 ---
 
@@ -244,6 +167,75 @@ Both shipped at v0.1.0, then updated to [v0.1.1](https://github.com/github/spec-
 | [RAG Implementation & Prompt Optimization](https://github.com/Yash-Chindam/RAG_Implementation_and_Prompt_Optimization) | Benchmarking and optimizing RAG prompt strategies | `RAG` `LLMs` |
 
 </details>
+
+---
+
+## 🛠️ Tech Stack
+
+<div align="center">
+
+**Languages**
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Bash](https://img.shields.io/badge/Bash-4EAA25?style=for-the-badge&logo=gnubash&logoColor=white)
+![PowerShell](https://img.shields.io/badge/PowerShell-5391FE?style=for-the-badge&logo=powershell&logoColor=white)
+
+**Agents & LLM Orchestration**
+
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![LangChain](https://img.shields.io/badge/LangChain-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
+![MCP](https://img.shields.io/badge/MCP-000000?style=for-the-badge)
+![DSPy](https://img.shields.io/badge/DSPy-FF6B35?style=for-the-badge)
+![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
+![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)
+
+**Retrieval & Knowledge**
+
+![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
+![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge)
+![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge)
+![ChromaDB](https://img.shields.io/badge/ChromaDB-F7931A?style=for-the-badge)
+![OpenSearch](https://img.shields.io/badge/OpenSearch-005EB8?style=for-the-badge&logo=opensearch&logoColor=white)
+![Graph RAG](https://img.shields.io/badge/Graph_RAG-6C63FF?style=for-the-badge)
+
+**Serving & Infrastructure**
+
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Ray Serve](https://img.shields.io/badge/Ray_Serve-028CF0?style=for-the-badge&logo=ray&logoColor=white)
+![vLLM](https://img.shields.io/badge/vLLM-FDB515?style=for-the-badge)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+
+**MLOps, Evaluation & Testing**
+
+![MLflow](https://img.shields.io/badge/MLflow-0194E2?style=for-the-badge&logo=mlflow&logoColor=white)
+![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
+![LangSmith](https://img.shields.io/badge/LangSmith-1C3C3C?style=for-the-badge)
+![RAGAS](https://img.shields.io/badge/RAGAS-6C63FF?style=for-the-badge)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+
+**Security & Policy**
+
+![OPA](https://img.shields.io/badge/OPA%2FRego-7D9199?style=for-the-badge&logo=openpolicyagent&logoColor=white)
+![Keycloak](https://img.shields.io/badge/Keycloak-4D4D4D?style=for-the-badge&logo=keycloak&logoColor=white)
+![Presidio](https://img.shields.io/badge/Presidio-0078D4?style=for-the-badge)
+![PyRIT](https://img.shields.io/badge/PyRIT-D83B01?style=for-the-badge)
+![Trivy](https://img.shields.io/badge/Trivy-1904DA?style=for-the-badge&logo=trivy&logoColor=white)
+
+**Cloud & Deep Learning**
+
+![Azure OpenAI](https://img.shields.io/badge/Azure_OpenAI-0078D4?style=for-the-badge&logo=microsoftazure&logoColor=white)
+![Vertex AI](https://img.shields.io/badge/Vertex_AI-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)
+![AWS Bedrock](https://img.shields.io/badge/AWS_Bedrock-232F3E?style=for-the-badge&logo=amazonaws&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![Transformers](https://img.shields.io/badge/🤗%20Transformers-FFD43B?style=for-the-badge)
+![CLIP](https://img.shields.io/badge/CLIP-00B2FF?style=for-the-badge)
+
+</div>
 
 ---
 
