@@ -192,10 +192,8 @@ me.say_hi()
 **Retrieval & Knowledge**
 
 ![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
-![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge)
 ![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-F7931A?style=for-the-badge)
-![OpenSearch](https://img.shields.io/badge/OpenSearch-005EB8?style=for-the-badge&logo=opensearch&logoColor=white)
 ![Graph RAG](https://img.shields.io/badge/Graph_RAG-6C63FF?style=for-the-badge)
 
 **Serving & Infrastructure**
@@ -214,8 +212,6 @@ me.say_hi()
 ![Databricks](https://img.shields.io/badge/Databricks-FF3621?style=for-the-badge&logo=databricks&logoColor=white)
 ![LangSmith](https://img.shields.io/badge/LangSmith-1C3C3C?style=for-the-badge)
 ![RAGAS](https://img.shields.io/badge/RAGAS-6C63FF?style=for-the-badge)
-![pytest](https://img.shields.io/badge/pytest-0A9EDC?style=for-the-badge&logo=pytest&logoColor=white)
-![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 
 **Cloud & Deep Learning**
 
