@@ -78,10 +78,10 @@ me.say_hi()
 <td width="50%" valign="top">
 
 ### 🛡️ [Secure MCP Multi-Agent Research Platform](https://github.com/Yash-Chindam/secure-mcp-multi-agent-research-platform)
-> A governed research system where five FastMCP servers are driven through a single gateway that **authorizes, meters, circuit-breaks and audits every tool call**. Workflow state transitions reject invalid stage skipping, claims require supporting evidence, and reviewer approvals bind to one exact server, capability, resource and argument digest.
+> A governed research system where five FastMCP servers are driven through a single gateway that **authorizes, meters, circuit-breaks and audits every tool call**. CrewAI planner, researcher, analyst, critic and reporter agents run on a durable Temporal workflow with a reviewer checkpoint. Workflow state transitions reject invalid stage skipping, claims require evidence the platform verifies against recorded tool calls, and reviewer approvals bind to one exact server, capability, resource and argument digest.
 
-**Security model:** Rego policy-as-code that fails closed · Keycloak OIDC with an asymmetric algorithm allowlist · capability registry whose discovery reveals only what the caller may see · tenant-isolated jobs and evidence
-**Stack:** `Python 3.12` `FastMCP` `FastAPI` `OPA/Rego` `Keycloak` `PostgreSQL` `Docker`
+**Security model:** Rego policy-as-code that fails closed · Keycloak OIDC with an asymmetric algorithm allowlist · capability registry whose discovery reveals only what the caller may see · PostgreSQL row-level security per tenant
+**Stack:** `Python 3.12` `FastMCP` `CrewAI` `Temporal` `FastAPI` `OPA/Rego` `Keycloak` `PostgreSQL` `Redis` `Docker`
 
 </td>
 <td width="50%" valign="top">
@@ -101,8 +101,8 @@ me.say_hi()
 ### 🔍 [Self-Optimizing Production RAG Platform](https://github.com/Yash-Chindam/self-optimizing-production-rag-platform)
 > RAG that **cites or abstains** — never guesses. The query path is an explicit state machine (classify → clarify → rewrite → decompose → retrieve → generate → verify → repair), so an ambiguous question gets clarified and an unverified answer is narrowed to its best-supported sentence before falling back.
 
-**Self-optimizing:** an evaluator scores retrieval recall, grounding and forbidden claims *deterministically* rather than by LLM judgment, then a control loop perturbs one pipeline field at a time within reviewer-approved bounds and keeps only Pareto-optimal candidates that never regress authorization, latency or quality
-**Stack:** `Python` `LangGraph` `DSPy` `Qdrant` `OpenSearch` `Neo4j` `Presidio`
+**Self-optimizing:** an evaluator scores retrieval recall, grounding and forbidden claims *deterministically* rather than by LLM judgment, then a control loop perturbs one pipeline field at a time within reviewer-approved bounds and keeps only Pareto-optimal candidates that never regress authorization, latency or quality · store adapters and the Helm chart are exercised against real services in CI
+**Stack:** `Python` `LangGraph` `DSPy` `Qdrant` `OpenSearch` `Neo4j` `Presidio` `RAGAS` `MLflow`
 
 </td>
 <td width="50%" valign="top">
@@ -122,7 +122,7 @@ me.say_hi()
 ### 🧬 [Drug-Protein Interaction Prediction](https://github.com/Yash-Chindam/Drug-Protein-Interaction-Prediction-Using-CLIP-and-Deep-Learning)
 > Predicts drug-protein binding strength (*Ki* values) using **OpenAI's CLIP** vision encoders on 2D molecular images and protein sequence logos.
 
-**Results:** RMSE `0.6041` · MSE `0.3649`
+**Results:** RMSE `0.6041` · MSE `0.3649` · 118K drug-protein pairs
 **Stack:** `PyTorch` `CLIP` `RDKit` `Transformers` `CUDA`
 
 [![HuggingFace](https://img.shields.io/badge/🤗%20Model-FFD43B?style=flat-square)](https://huggingface.co/yashchindam/Drug-Protein-Interaction-Prediction-Using-CLIP-and-Deep-Learning)
@@ -188,10 +188,13 @@ me.say_hi()
 ![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=googlegemini&logoColor=white)
 ![Groq](https://img.shields.io/badge/Groq-F55036?style=for-the-badge)
 ![AGNO](https://img.shields.io/badge/AGNO-FF4017?style=for-the-badge)
+![CrewAI](https://img.shields.io/badge/CrewAI-FF5A50?style=for-the-badge)
+![Temporal](https://img.shields.io/badge/Temporal-141414?style=for-the-badge)
 
 **Retrieval & Knowledge**
 
 ![Neo4j](https://img.shields.io/badge/Neo4j-4581C3?style=for-the-badge&logo=neo4j&logoColor=white)
+![Qdrant](https://img.shields.io/badge/Qdrant-DC244C?style=for-the-badge)
 ![FAISS](https://img.shields.io/badge/FAISS-0467DF?style=for-the-badge)
 ![ChromaDB](https://img.shields.io/badge/ChromaDB-F7931A?style=for-the-badge)
 ![Graph RAG](https://img.shields.io/badge/Graph_RAG-6C63FF?style=for-the-badge)
