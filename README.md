@@ -189,6 +189,7 @@ me.say_hi()
 ![Groq](https://img.shields.io/badge/Groq-F55036?style=for-the-badge)
 ![AGNO](https://img.shields.io/badge/AGNO-FF4017?style=for-the-badge)
 ![CrewAI](https://img.shields.io/badge/CrewAI-FF5A50?style=for-the-badge)
+![DSPy](https://img.shields.io/badge/DSPy-1E40AF?style=for-the-badge)
 ![Temporal](https://img.shields.io/badge/Temporal-141414?style=for-the-badge)
 
 **Retrieval & Knowledge**
@@ -206,6 +207,7 @@ me.say_hi()
 ![vLLM](https://img.shields.io/badge/vLLM-FDB515?style=for-the-badge)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 ![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
+![OPA/Rego](https://img.shields.io/badge/OPA%2FRego-7D9199?style=for-the-badge&logo=openpolicyagent&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
 ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
 
